@@ -2,15 +2,16 @@
 <resources>
     <color name="colorPrimary">@color/colorDarkGrey</color>
     <color name="colorPrimaryDark">@color/colorDarkGrey</color>
-    <color name="colorAccent">#33537C</color>
+    <color name="colorAccent">#2664B5</color>
 
     <color name="colorAccentBackground">#242A32</color>
     <color name="colorBlack">#070707</color>
-    <color name="colorDarkGrey">#505050</color>
+    <color name="colorDarkGrey">#424141</color>
     <color name="colorMidGrey">#C1BEBC</color>
     <color name="colorLightGrey">#5C5B5B</color>
     <color name="colorDarkBrown">#573223</color>
     <color name="colorLightBrown">#995236</color>
+    <color name="colorCardBackground">#212121</color>
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWhiteOff50">#80FFFFFF</color>
