@@ -53,7 +53,7 @@ data class RepositoriesModel(
     val node_id: String? = "",
     val notifications_url: String? = "",
     val open_issues: Int? = 0,
-    val open_issues_count: Int? = 0,
+    val open_issues_count: Int = 0,
     val owner: Owner? = Owner(),
     val permissions: Permissions? = Permissions(),
     val `private`: Boolean? = false,

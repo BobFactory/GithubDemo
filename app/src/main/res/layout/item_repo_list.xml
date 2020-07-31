@@ -32,13 +32,17 @@
 
         <TextView
             android:id="@+id/tvRepoName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:ellipsize="end"
             android:fontFamily="@font/sourcecodepro_bold"
+            android:maxLines="1"
+            android:singleLine="true"
             android:text="Android Architecture Samples"
             android:textColor="@color/colorWhite"
             android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivUserImage"
             app:layout_constraintTop_toTopOf="@+id/ivUserImage" />
 
@@ -50,7 +54,7 @@
             android:text="Android"
             android:textColor="@color/colorWhite"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/tvRepoName"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvRepoName"
             app:layout_constraintTop_toBottomOf="@+id/tvRepoName" />
 

@@ -8,11 +8,13 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
 class NetworkModule {
 
     @Provides
+    @Singleton
     fun providesOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().also {
@@ -22,6 +24,7 @@ class NetworkModule {
     }
 
     @Provides
+    @Singleton
     fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://api.github.com/")
@@ -32,6 +35,7 @@ class NetworkModule {
     }
 
     @Provides
+    @Singleton
     fun providesGithubServices(retrofit: Retrofit): GithubServices {
         return retrofit.create(GithubServices::class.java)
     }

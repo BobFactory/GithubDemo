@@ -1,0 +1,32 @@
+package com.example.githubdemo.di.module
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.example.githubdemo.ViewModelFactory
+import com.example.githubdemo.di.annotations.ViewModelKey
+import com.example.githubdemo.ui.GithubRepository
+import com.example.githubdemo.ui.gtihub_repository.RepositoriesViewModel
+import dagger.Module
+import dagger.Provides
+import dagger.multibindings.IntoMap
+import javax.inject.Provider
+import javax.inject.Singleton
+
+@Module
+class ViewModelModule {
+
+    @Provides
+    @Singleton
+    fun providesViewModelFactory(
+        map: Map<Class<out ViewModel>,@JvmSuppressWildcards Provider<ViewModel>>
+    ) : ViewModelProvider.Factory {
+        return ViewModelFactory(map)
+    }
+
+    @Provides
+    @IntoMap
+    @ViewModelKey(RepositoriesViewModel::class)
+    fun providesRepositoriesViewModel(repository: GithubRepository) : ViewModel {
+        return RepositoriesViewModel(repository)
+    }
+}
