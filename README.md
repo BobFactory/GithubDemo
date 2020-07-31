@@ -1,5 +1,6 @@
 <img src="Readme_Banner.png"/>
-Github demo app's design is inspired from illustrations of [Aakash Raj Dahal](https://dribbble.com/AkashRajDahal)
+
+_Github demo app's design is inspired from illustrations of [Aakash Raj Dahal](https://dribbble.com/AkashRajDahal)_ :+1:
 <br/>
 
 # GITHUB DEMO APP
