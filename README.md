@@ -5,8 +5,7 @@ _Github demo app's design is inspired from illustrations of [Aakash Raj Dahal](h
 
 # GITHUB DEMO APP
 
-The following is an android demonstration application used to show the usage of MVVM architecture along with RxJava.  
-The Application uses the Gihub Open Api v3 to request the list of public repositories with the language reference <code>Kotlin</code> in them.
+The following is an android demonstration application used to show the usage of MVVM architecture along with RxJava. The Application uses the Gihub Open Api v3 to request the list of public repositories with the language reference <code>Kotlin</code> in them. The search tab also uses the v3 api from Github to fetch organizations list and perform filtering based on the user search text.
 
 <br/>
 
