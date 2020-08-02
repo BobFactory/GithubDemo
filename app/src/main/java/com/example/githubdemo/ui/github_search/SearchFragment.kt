@@ -14,6 +14,7 @@ import com.example.githubdemo.R
 import com.example.githubdemo.ext.showToast
 import com.example.githubdemo.network.models.OrgModel
 import com.example.githubdemo.ui.DashboardActivity
+import com.jakewharton.rxbinding4.widget.textChanges
 import kotlinx.android.synthetic.main.fragment_search.*
 import javax.inject.Inject
 
@@ -40,6 +41,9 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvSearchResults.adapter = SearchAdapter(organizationList)
+
+        //add observer to the view-model to observe text change events.
+        viewModel.addSearchOrganization(etSearch.textChanges().map { it.toString() })
 
         viewModel.onError.observe(viewLifecycleOwner, Observer {
             (activity as AppCompatActivity).showToast(it)
