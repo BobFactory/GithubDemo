@@ -31,7 +31,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tvRepoName"
+            android:id="@+id/tvOrgName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -55,8 +55,8 @@
             android:textColor="@color/colorWhite"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvRepoName"
-            app:layout_constraintTop_toBottomOf="@+id/tvRepoName" />
+            app:layout_constraintStart_toStartOf="@+id/tvOrgName"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrgName" />
 
         <View
             android:id="@+id/view"

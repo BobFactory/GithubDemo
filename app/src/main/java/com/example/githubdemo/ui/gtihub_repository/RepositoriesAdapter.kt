@@ -3,7 +3,6 @@ package com.example.githubdemo.ui.gtihub_repository
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubdemo.R
 import com.example.githubdemo.network.models.RepositoriesModel
@@ -18,7 +17,7 @@ class RepositoriesAdapter(
     class RepositoriesViewHolder(item: View) : RecyclerView.ViewHolder(item) {
 
         fun bind(data: RepositoriesModel) {
-            itemView.tvRepoName.text = data.name
+            itemView.tvOrgName.text = data.name
             itemView.tvRepoOwnerName.text = data.owner?.login
             itemView.tvIssuesCount.text =
                 itemView.context.getString(R.string.text_issues_count, data.open_issues_count)

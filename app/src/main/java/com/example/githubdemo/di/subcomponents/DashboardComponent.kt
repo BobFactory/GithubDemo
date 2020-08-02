@@ -1,6 +1,7 @@
 package com.example.githubdemo.di.subcomponents
 
 import com.example.githubdemo.di.annotations.ActivityScope
+import com.example.githubdemo.ui.github_search.SearchFragment
 import com.example.githubdemo.ui.gtihub_repository.RepositoryFragment
 import dagger.Subcomponent
 
@@ -15,4 +16,5 @@ interface DashboardComponent {
 
     fun inject(fragment: RepositoryFragment)
 
+    fun inject(fragment: SearchFragment)
 }

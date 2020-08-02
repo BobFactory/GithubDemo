@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.githubdemo.ViewModelFactory
 import com.example.githubdemo.di.annotations.ViewModelKey
 import com.example.githubdemo.ui.GithubRepository
+import com.example.githubdemo.ui.github_search.SearchViewModel
 import com.example.githubdemo.ui.gtihub_repository.RepositoriesViewModel
 import dagger.Module
 import dagger.Provides
@@ -28,5 +29,12 @@ class ViewModelModule {
     @ViewModelKey(RepositoriesViewModel::class)
     fun providesRepositoriesViewModel(repository: GithubRepository) : ViewModel {
         return RepositoriesViewModel(repository)
+    }
+
+    @Provides
+    @IntoMap
+    @ViewModelKey(SearchViewModel::class)
+    fun providesSearchViewModel(repository: GithubRepository) : ViewModel {
+        return SearchViewModel(repository)
     }
 }
