@@ -12,6 +12,7 @@ import com.example.githubdemo.ui.github_search.SearchFragment
 import com.example.githubdemo.ui.gtihub_repository.RepositoryFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 class DashboardActivity : AppCompatActivity(),
     BottomNavigationView.OnNavigationItemSelectedListener {
@@ -31,8 +32,14 @@ class DashboardActivity : AppCompatActivity(),
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.bottom_navigation_repos -> replaceFragment(R.id.container, repoFragment)
-            R.id.bottom_navigation_orgs -> replaceFragment(R.id.container, searchFragment)
+            R.id.bottom_navigation_repos -> {
+                toolbar_title.text = getString(R.string.text_repositories)
+                replaceFragment(R.id.container, repoFragment)
+            }
+            R.id.bottom_navigation_orgs -> {
+                toolbar_title.text = getString(R.string.text_organizations)
+                replaceFragment(R.id.container, searchFragment)
+            }
         }
         return true
     }

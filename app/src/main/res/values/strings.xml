@@ -2,4 +2,6 @@
     <string name="app_name">GithubDemo</string>
     <string name="something_went_wrong">Something went wrong please try again later</string>
     <string name="text_issues_count">%1d issues</string>
+    <string name="text_repositories">Repositories</string>
+    <string name="text_organizations">Organizations</string>
 </resources>
