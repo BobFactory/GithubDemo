@@ -28,7 +28,8 @@
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="Organization Image" />
 
         <TextView
             android:id="@+id/tvOrgName"
@@ -39,7 +40,6 @@
             android:fontFamily="@font/sourcecodepro_bold"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="Android Architecture Samples"
             android:textColor="@color/colorWhite"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/sourcecodepro_regular"
-            android:text="A collection of samples to discuss and showcase different architectural tools and patterns for Android apps"
             android:textColor="@color/colorMidGrey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

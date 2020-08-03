@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.githubdemo.base.BaseResponseConsumer
 import com.example.githubdemo.base.BaseViewModel
-import com.example.githubdemo.network.RequestState
 import com.example.githubdemo.network.models.OrgModel
 import com.example.githubdemo.ui.GithubRepository
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -27,19 +26,19 @@ class SearchViewModel @Inject constructor(
             .doOnSubscribe { disposable.add(it) }
             .subscribe(object : BaseResponseConsumer() {
                 override fun loading() {
-                    _loading.value = true
+                    loading.value = true
                 }
 
                 override fun <T> success(data: T) {
-                    _loading.value = false
+                    loading.value = false
                     orgList.clear()
                     orgList.addAll(data as List<OrgModel>)
                     _orgList.value = orgList
                 }
 
                 override fun error(msg: String) {
-                    _loading.value = false
-                    _error.value = msg
+                    loading.value = false
+                    error.value = msg
                 }
             })
     }

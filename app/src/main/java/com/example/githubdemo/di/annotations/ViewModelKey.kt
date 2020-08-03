@@ -2,7 +2,6 @@ package com.example.githubdemo.di.annotations
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
-import dagger.multibindings.IntoMap
 import kotlin.reflect.KClass
 
 @MapKey

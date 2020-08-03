@@ -6,14 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubdemo.R
 import com.example.githubdemo.network.models.OrgModel
-import com.example.githubdemo.network.models.RepositoriesModel
 import com.example.githubdemo.utils.CircleTransform
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_repo_list.view.*
-import kotlinx.android.synthetic.main.item_repo_list.view.ivUserImage
-import kotlinx.android.synthetic.main.item_repo_list.view.tvDescription
-import kotlinx.android.synthetic.main.item_repo_list.view.tvOrgName
-import kotlinx.android.synthetic.main.item_search_list.view.*
 
 class SearchAdapter(
     private val orgs: List<OrgModel>

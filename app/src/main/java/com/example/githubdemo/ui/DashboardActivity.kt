@@ -1,8 +1,8 @@
 package com.example.githubdemo.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.example.githubdemo.R
 import com.example.githubdemo.di.subcomponents.DashboardComponent
 import com.example.githubdemo.ext.addFragment

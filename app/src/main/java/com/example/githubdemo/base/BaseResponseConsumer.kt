@@ -1,7 +1,6 @@
 package com.example.githubdemo.base
 
 import com.example.githubdemo.network.RequestState
-import com.example.githubdemo.network.models.RepositoriesModel
 import io.reactivex.rxjava3.functions.Consumer
 
 /**

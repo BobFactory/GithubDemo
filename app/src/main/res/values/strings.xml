@@ -4,4 +4,6 @@
     <string name="text_issues_count">%1d issues</string>
     <string name="text_repositories">Repositories</string>
     <string name="text_organizations">Organizations</string>
+    <string name="text_search">Search</string>
+    <string name="text_kotlin">Kotlin</string>
 </resources>

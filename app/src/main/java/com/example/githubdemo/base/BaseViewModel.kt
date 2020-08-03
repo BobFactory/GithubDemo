@@ -11,11 +11,11 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 open class BaseViewModel: ViewModel() {
     protected val disposable = CompositeDisposable()
 
-    protected val _error = MutableLiveData<String>()
-    val onError: LiveData<String> = _error
+    protected val error = MutableLiveData<String>()
+    val onError: LiveData<String> = error
 
-    protected val _loading = MutableLiveData<Boolean>()
-    val onLoadingStateChange: LiveData<Boolean> = _loading
+    protected val loading = MutableLiveData<Boolean>()
+    val onLoadingStateChange: LiveData<Boolean> = loading
 
     override fun onCleared() {
         disposable.clear()
