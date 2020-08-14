@@ -11,7 +11,7 @@
     <color name="colorLightBrown">#995236</color>
     <color name="colorCardBackground">#212121</color>
 
-    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite">#DAFFFFFF</color>
     <color name="colorWhiteOff50">#80FFFFFF</color>
 
 </resources>

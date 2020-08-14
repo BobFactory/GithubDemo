@@ -7,13 +7,13 @@ import io.reactivex.rxjava3.functions.Consumer
  * A base response class to handle the states of RequestState object and use the
  * template design pattern to handle the implementation of the action by the child class.
  */
-abstract class BaseResponseConsumer: Consumer<RequestState> {
+abstract class BaseResponseConsumer : Consumer<RequestState> {
 
     override fun accept(t: RequestState?) {
-        when(t) {
-                is RequestState.Loading -> loading()
-                is RequestState.Error -> error(t.message)
-                is RequestState.Success<*> -> success(t.data)
+        when (t) {
+            is RequestState.Loading -> loading()
+            is RequestState.Error -> error(t.message)
+            is RequestState.Success<*> -> success(t.data)
         }
     }
 

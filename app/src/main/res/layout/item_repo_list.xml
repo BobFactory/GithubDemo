@@ -7,7 +7,8 @@
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/colorCardBackground"
     app:cardCornerRadius="5dp"
-    android:layout_margin="10dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="4dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
@@ -20,7 +21,7 @@
         android:paddingTop="20dp"
         android:paddingEnd="16dp"
         android:paddingRight="16dp"
-        android:paddingBottom="20dp">
+        android:paddingBottom="12dp">
 
         <ImageView
             android:id="@+id/ivUserImage"
@@ -41,7 +42,7 @@
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@color/colorWhite"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivUserImage"
             app:layout_constraintTop_toTopOf="@+id/ivUserImage" />
@@ -52,7 +53,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/sourcecodepro_semi_bold"
             android:textColor="@color/colorWhite"
-            android:textSize="14sp"
+            android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvOrgName"
             app:layout_constraintTop_toBottomOf="@+id/tvOrgName" />
@@ -61,8 +62,8 @@
             android:id="@+id/view"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorBlack"
+            android:layout_marginTop="12dp"
+            android:background="@color/colorDarkGrey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/ivUserImage"
             app:layout_constraintTop_toBottomOf="@+id/ivUserImage" />
@@ -71,7 +72,7 @@
             android:id="@+id/tvDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/sourcecodepro_regular"
             android:textColor="@color/colorMidGrey"
             app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +95,8 @@
             android:fontFamily="@font/sourcecodepro_semi_bold"
             android:text="@string/text_kotlin"
             android:textColor="@color/colorMidGrey"
-            android:layout_marginStart="8dp"
+            android:textSize="12sp"
+            android:layout_marginStart="4dp"
             app:layout_constraintStart_toEndOf="@+id/circle_language"
             app:layout_constraintBottom_toBottomOf="@+id/circle_language"
             app:layout_constraintTop_toTopOf="@+id/circle_language" />
@@ -118,7 +120,7 @@
             android:fontFamily="@font/sourcecodepro_semi_bold"
             android:text="2.2k"
             android:textColor="@color/colorMidGrey"
-            android:layout_marginStart="8dp"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/ivStar"
             app:layout_constraintBottom_toBottomOf="@+id/ivStar"
             app:layout_constraintTop_toTopOf="@+id/ivStar" />
@@ -127,15 +129,16 @@
             android:id="@+id/tvIssuesCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:textColor="@color/colorAccent"
-            android:textSize="16sp"
+            android:textSize="12sp"
             android:paddingHorizontal="8dp"
             android:paddingVertical="4dp"
+            android:text="counting text "
             android:background="@drawable/solid_border_bg"
-            android:fontFamily="@font/sourcecodepro_bold"
+            android:fontFamily="@font/sourcecodepro_semi_bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+            app:layout_constraintBottom_toBottomOf="@+id/tvStarCount"
+            app:layout_constraintTop_toTopOf="@+id/tvStarCount" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

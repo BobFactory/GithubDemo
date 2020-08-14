@@ -27,18 +27,20 @@ class DashboardActivity : AppCompatActivity(),
         setContentView(R.layout.activity_main)
         initViews()
 
-        addFragment(R.id.container, repoFragment)
+        if (supportFragmentManager.findFragmentByTag(repoFragment::class.java.name) == null) {
+            addFragment(R.id.container, repoFragment, repoFragment::class.java.name)
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.bottom_navigation_repos -> {
                 toolbar_title.text = getString(R.string.text_repositories)
-                replaceFragment(R.id.container, repoFragment)
+                replaceFragment(R.id.container, repoFragment, repoFragment::class.java.name)
             }
             R.id.bottom_navigation_orgs -> {
                 toolbar_title.text = getString(R.string.text_organizations)
-                replaceFragment(R.id.container, searchFragment)
+                replaceFragment(R.id.container, searchFragment, searchFragment::class.java.name)
             }
         }
         return true
