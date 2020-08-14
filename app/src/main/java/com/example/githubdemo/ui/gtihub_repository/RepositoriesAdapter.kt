@@ -11,10 +11,11 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_repo_list.view.*
 
 class RepositoriesAdapter(
-    private val repos: List<RepositoriesModel>
+    private val repos: List<RepositoriesModel>,
+    private val onRepoPress: (RepositoriesModel, View) -> Unit
 ) : RecyclerView.Adapter<RepositoriesAdapter.RepositoriesViewHolder>() {
 
-    class RepositoriesViewHolder(item: View) : RecyclerView.ViewHolder(item) {
+    inner class RepositoriesViewHolder(item: View) : RecyclerView.ViewHolder(item) {
 
         fun bind(data: RepositoriesModel) {
             itemView.tvOrgName.text = data.name
@@ -26,15 +27,15 @@ class RepositoriesAdapter(
             Picasso.get().load(data.owner?.avatar_url)
                 .transform(CircleTransform())
                 .into(itemView.ivUserImage)
+
+            itemView.setOnClickListener { onRepoPress.invoke(data, itemView) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoriesViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_repo_list, parent, false)
-        return RepositoriesViewHolder(
-            view
-        )
+        return RepositoriesViewHolder(view)
     }
 
     override fun getItemCount() = repos.size

@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.githubdemo.R
 import com.example.githubdemo.base.BaseViewModel
+import com.example.githubdemo.di.annotations.ActivityScope
 import com.example.githubdemo.network.RequestState
 import com.example.githubdemo.network.models.IssuesModel
 import com.example.githubdemo.network.models.LicenseModel
@@ -19,10 +20,10 @@ import javax.inject.Inject
 
 data class RepoDetails(val repoLicenseData: LicenseModel, val issues: List<IssuesModel>)
 
+@ActivityScope
 class RepoDetailViewModel @Inject constructor(
     private val context: Context,
     private val githubRepository: GithubRepository
-
 ) : BaseViewModel() {
     private val _repositoryData = MutableLiveData<RepoDetailViewModel>()
     val onRepoData: LiveData<RepoDetailViewModel> = _repositoryData

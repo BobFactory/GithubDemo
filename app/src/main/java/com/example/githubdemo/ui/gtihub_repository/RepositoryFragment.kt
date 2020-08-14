@@ -1,11 +1,13 @@
 package com.example.githubdemo.ui.gtihub_repository
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -14,8 +16,10 @@ import com.example.githubdemo.R
 import com.example.githubdemo.ext.showToast
 import com.example.githubdemo.network.models.RepositoriesModel
 import com.example.githubdemo.ui.DashboardActivity
+import com.example.githubdemo.ui.repo_detail.RepoDetailActivity
 import kotlinx.android.synthetic.main.fragment_repositories.*
 import javax.inject.Inject
+
 
 class RepositoryFragment : Fragment() {
     @Inject
@@ -23,6 +27,7 @@ class RepositoryFragment : Fragment() {
     private val viewModel: RepositoriesViewModel by viewModels { viewModelFactory }
 
     private val repoList = mutableListOf<RepositoriesModel>()
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -39,7 +44,23 @@ class RepositoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        rvRepositories.adapter = RepositoriesAdapter(repoList)
+
+        rvRepositories.adapter = RepositoriesAdapter(repoList) { repoData, sharedView ->
+
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                requireActivity(),
+                sharedView,
+                "repoInfo"
+            )
+
+            startActivity(
+                Intent(activity, RepoDetailActivity::class.java)
+                    .putExtra(RepoDetailActivity.EXTRA_REPO_DATA, repoData)
+                ,
+                options.toBundle()
+            )
+
+        }
 
         initObservables()
     }

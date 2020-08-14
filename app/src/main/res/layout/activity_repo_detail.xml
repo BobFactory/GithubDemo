@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorDarkGrey">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorDarkGrey">
+        android:layout_height="wrap_content">
 
         <include
+            android:transitionName="repoInfo"
             android:id="@+id/repo_info"
             layout="@layout/item_repo_list"
             android:layout_width="match_parent"
@@ -26,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/sourcecodepro_black"
-            android:text="License"
+            android:text="@string/text_license"
             android:textColor="@color/colorWhite"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="@+id/repo_info"
@@ -49,7 +51,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/sourcecodepro_medium"
-            android:text="Apache License 2.0"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/license_divider"
@@ -62,7 +63,6 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/sourcecodepro_regular"
-            android:text="A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights."
             android:textColor="@color/colorWhiteOff50"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="6dp"
             android:fontFamily="@font/sourcecodepro_regular"
-            android:text="Can be used for the following:"
+            android:text="@string/text_license_use"
             android:textColor="@color/colorWhite"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +91,6 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/sourcecodepro_regular"
-            android:text="- commercial-use \n- modifications \n- distribution"
             android:textColor="@color/colorWhiteOff50"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +105,7 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="6dp"
             android:fontFamily="@font/sourcecodepro_regular"
-            android:text="through the following conditions:"
+            android:text="@string/text_license_conditions"
             android:textColor="@color/colorWhite"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +119,6 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/sourcecodepro_regular"
-            android:text="- commercial-use \n- modifications \n- distribution"
             android:textColor="@color/colorWhiteOff50"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/sourcecodepro_black"
-            android:text="Issues"
+            android:text="@string/text_issues"
             android:textColor="@color/colorWhite"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="@+id/repo_info"
@@ -161,6 +159,16 @@
             app:layout_constraintTop_toBottomOf="@+id/issues_divider"
             tools:listitem="@layout/item_issues_list" />
 
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressBarRepoDetail"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

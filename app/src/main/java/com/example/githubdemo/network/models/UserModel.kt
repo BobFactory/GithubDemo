@@ -1,6 +1,10 @@
 package com.example.githubdemo.network.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
+
+@Parcelize
 data class UserModel(
     val avatar_url: String? = "",
     val events_url: String? = "",
@@ -20,4 +24,4 @@ data class UserModel(
     val subscriptions_url: String? = "",
     val type: String? = "",
     val url: String? = ""
-)
+) : Parcelable

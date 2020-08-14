@@ -4,6 +4,7 @@ import android.content.Context
 import com.example.githubdemo.di.module.NetworkModule
 import com.example.githubdemo.di.module.ViewModelModule
 import com.example.githubdemo.di.subcomponents.DashboardComponent
+import com.example.githubdemo.di.subcomponents.RepoDetailComponent
 import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
@@ -18,8 +19,10 @@ interface ApplicationComponent {
         fun create(@BindsInstance applicationContext: Context): ApplicationComponent
     }
 
-    fun addDashboardComponent() : DashboardComponent.Factory
+    fun addDashboardComponent(): DashboardComponent.Factory
+
+    fun addRepoDetailComponent(): RepoDetailComponent.Factory
 }
 
-@Module(subcomponents = [DashboardComponent::class])
+@Module(subcomponents = [DashboardComponent::class, RepoDetailComponent::class])
 object SubComponentsModule

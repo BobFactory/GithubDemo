@@ -6,4 +6,8 @@
     <string name="text_organizations">Organizations</string>
     <string name="text_search">Search</string>
     <string name="text_kotlin">Kotlin</string>
+    <string name="text_license">License</string>
+    <string name="text_license_use">Can be used for the following:</string>
+    <string name="text_license_conditions">through the following conditions:</string>
+    <string name="text_issues">Issues</string>
 </resources>

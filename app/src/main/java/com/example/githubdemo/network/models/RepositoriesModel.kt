@@ -1,7 +1,10 @@
 package com.example.githubdemo.network.models
 
-import java.security.acl.Owner
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
+
+@Parcelize
 data class RepositoriesModel(
     val archive_url: String? = "",
     val archived: Boolean? = false,
@@ -50,7 +53,7 @@ data class RepositoriesModel(
     val license: License? = License(),
     val merges_url: String? = "",
     val milestones_url: String? = "",
-    val mirror_url: Any? = Any(),
+    val mirror_url: String? = "",
     val name: String? = "",
     val node_id: String? = "",
     val notifications_url: String? = "",
@@ -78,19 +81,21 @@ data class RepositoriesModel(
     val url: String? = "",
     val watchers: Int? = 0,
     val watchers_count: Int? = 0
-)
+) : Parcelable
 
+@Parcelize
 data class License(
     val key: String? = "",
     val name: String? = "",
     val node_id: String? = "",
     val spdx_id: String? = "",
     val url: String? = ""
-)
+) : Parcelable
 
 
+@Parcelize
 data class Permissions(
     val admin: Boolean? = false,
     val pull: Boolean? = false,
     val push: Boolean? = false
-)
+) : Parcelable
