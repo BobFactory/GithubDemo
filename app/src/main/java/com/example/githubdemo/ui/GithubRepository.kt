@@ -1,6 +1,7 @@
 package com.example.githubdemo.ui
 
 import android.content.Context
+import android.util.Log
 import com.example.githubdemo.R
 import com.example.githubdemo.network.RequestState
 import com.example.githubdemo.network.services.GithubServices

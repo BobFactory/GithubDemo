@@ -1,174 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorDarkGrey">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <include
-            android:transitionName="repoInfo"
-            android:id="@+id/repo_info"
-            layout="@layout/item_repo_list"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvLicenseTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/sourcecodepro_black"
-            android:text="@string/text_license"
-            android:textColor="@color/colorWhite"
-            android:textSize="22sp"
-            app:layout_constraintStart_toStartOf="@+id/repo_info"
-            app:layout_constraintTop_toBottomOf="@+id/repo_info" />
+            <include
+                android:id="@+id/repo_info"
+                layout="@layout/item_repo_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                android:transitionName="repoInfo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/license_divider"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:background="@color/colorLightBrown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvLicenseTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvLicenseTitle" />
+            <TextView
+                android:id="@+id/tvLicenseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sourcecodepro_black"
+                android:text="@string/text_license"
+                android:textColor="@color/colorWhite"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/repo_info"
+                app:layout_constraintTop_toBottomOf="@+id/repo_info" />
 
-        <TextView
-            android:id="@+id/tvLicenseName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/sourcecodepro_medium"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/license_divider"
-            app:layout_constraintTop_toBottomOf="@+id/license_divider" />
+            <View
+                android:id="@+id/viewLicenseDivider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/colorLightBrown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvLicenseTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvLicenseTitle" />
 
-        <TextView
-            android:id="@+id/tvLicenseDescription"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/sourcecodepro_regular"
-            android:textColor="@color/colorWhiteOff50"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLicenseName" />
+            <TextView
+                android:id="@+id/tvLicenseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sourcecodepro_medium"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/viewLicenseDivider"
+                app:layout_constraintTop_toBottomOf="@+id/viewLicenseDivider" />
 
-        <TextView
-            android:id="@+id/tvLicenseUsageTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/sourcecodepro_regular"
-            android:text="@string/text_license_use"
-            android:textColor="@color/colorWhite"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLicenseDescription" />
+            <TextView
+                android:id="@+id/tvLicenseDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/sourcecodepro_regular"
+                android:textColor="@color/colorWhiteOff50"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLicenseName" />
 
-
-        <TextView
-            android:id="@+id/tvLicenseUsage"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/sourcecodepro_regular"
-            android:textColor="@color/colorWhiteOff50"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLicenseUsageTitle" />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvLicenseUsageTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/sourcecodepro_regular"
+                android:text="@string/text_license_use"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLicenseDescription" />
 
 
-        <TextView
-            android:id="@+id/tvLicenseConditionsTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/sourcecodepro_regular"
-            android:text="@string/text_license_conditions"
-            android:textColor="@color/colorWhite"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLicenseUsage" />
+            <TextView
+                android:id="@+id/tvLicenseUsage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/sourcecodepro_regular"
+                android:textColor="@color/colorWhiteOff50"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLicenseUsageTitle" />
 
-        <TextView
-            android:id="@+id/tvLicenseConditions"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/sourcecodepro_regular"
-            android:textColor="@color/colorWhiteOff50"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLicenseConditionsTitle" />
 
-        <TextView
-            android:id="@+id/tvIssuesTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/sourcecodepro_black"
-            android:text="@string/text_issues"
-            android:textColor="@color/colorWhite"
-            android:textSize="22sp"
-            app:layout_constraintStart_toStartOf="@+id/repo_info"
-            app:layout_constraintTop_toBottomOf="@+id/tvLicenseConditions" />
+            <TextView
+                android:id="@+id/tvLicenseConditionsTitle"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/sourcecodepro_regular"
+                android:text="@string/text_license_conditions"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLicenseUsage" />
 
-        <View
-            android:id="@+id/issues_divider"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:background="@color/colorLightBrown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvIssuesTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvIssuesTitle" />
+            <TextView
+                android:id="@+id/tvLicenseConditions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/sourcecodepro_regular"
+                android:textColor="@color/colorWhiteOff50"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLicenseConditionsTitle" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvIssuesList"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/issues_divider"
-            tools:listitem="@layout/item_issues_list" />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvIssuesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sourcecodepro_black"
+                android:text="@string/text_issues"
+                android:textColor="@color/colorWhite"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/repo_info"
+                app:layout_constraintTop_toBottomOf="@+id/tvLicenseConditions" />
 
-        <ProgressBar
-            android:visibility="gone"
-            android:id="@+id/progressBarRepoDetail"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <View
+                android:visibility="gone"
+                android:id="@+id/issues_divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/colorLightBrown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvIssuesTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvIssuesTitle" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/rvIssuesList"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/issues_divider"
+                tools:listitem="@layout/item_issues_list" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBarRepoDetail"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
