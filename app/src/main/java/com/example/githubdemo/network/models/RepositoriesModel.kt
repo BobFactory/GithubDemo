@@ -1,5 +1,7 @@
 package com.example.githubdemo.network.models
 
+import java.security.acl.Owner
+
 data class RepositoriesModel(
     val archive_url: String? = "",
     val archived: Boolean? = false,
@@ -54,7 +56,7 @@ data class RepositoriesModel(
     val notifications_url: String? = "",
     val open_issues: Int? = 0,
     val open_issues_count: Int = 0,
-    val owner: Owner? = Owner(),
+    val owner: UserModel? = UserModel(),
     val permissions: Permissions? = Permissions(),
     val `private`: Boolean? = false,
     val pulls_url: String? = "",
@@ -86,26 +88,6 @@ data class License(
     val url: String? = ""
 )
 
-data class Owner(
-    val avatar_url: String? = "",
-    val events_url: String? = "",
-    val followers_url: String? = "",
-    val following_url: String? = "",
-    val gists_url: String? = "",
-    val gravatar_id: String? = "",
-    val html_url: String? = "",
-    val id: Int? = 0,
-    val login: String? = "",
-    val node_id: String? = "",
-    val organizations_url: String? = "",
-    val received_events_url: String? = "",
-    val repos_url: String? = "",
-    val site_admin: Boolean? = false,
-    val starred_url: String? = "",
-    val subscriptions_url: String? = "",
-    val type: String? = "",
-    val url: String? = ""
-)
 
 data class Permissions(
     val admin: Boolean? = false,

@@ -59,7 +59,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvOrgName" />
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/license_divider"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginTop="12dp"
@@ -77,7 +77,7 @@
             android:textColor="@color/colorMidGrey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/license_divider" />
 
         <View
             android:id="@+id/circle_language"

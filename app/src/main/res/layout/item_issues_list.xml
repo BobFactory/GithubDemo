@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/colorCardBackground"
-    app:cardCornerRadius="5dp"
     android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="4dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    app:cardBackgroundColor="@color/colorAccentBackground"
+    app:cardCornerRadius="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingStart="16dp"
-        android:paddingLeft="16dp"
-        android:paddingTop="20dp"
-        android:paddingEnd="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="20dp">
+        android:padding="8dp"
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/ivUserImage"
@@ -30,47 +21,34 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars"
-            android:contentDescription="Organization Image" />
+            android:contentDescription="Issue owner image" />
 
         <TextView
-            android:id="@+id/tvOrgName"
+            android:id="@+id/tvIssueName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:ellipsize="end"
+            android:text="While running a project ,there is a problem with gradle."
             android:fontFamily="@font/sourcecodepro_bold"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorAccent"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivUserImage"
             app:layout_constraintTop_toTopOf="@+id/ivUserImage" />
 
-        <View
-            android:id="@+id/license_divider"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/colorDarkGrey"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/ivUserImage"
-            app:layout_constraintTop_toBottomOf="@+id/ivUserImage" />
-
         <TextView
-            android:id="@+id/tvDescription"
+            android:id="@+id/tvIssueBody"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:textSize="14sp"
             android:fontFamily="@font/sourcecodepro_regular"
-            android:textColor="@color/colorMidGrey"
+            android:textColor="@color/colorWhiteOff50"
+            android:textSize="13sp"
+            android:text="It displaying that Failed to build"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/license_divider" />
-
+            app:layout_constraintStart_toStartOf="@+id/tvIssueName"
+            app:layout_constraintTop_toBottomOf="@+id/tvIssueName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.cardview.widget.CardView>

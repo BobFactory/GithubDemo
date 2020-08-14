@@ -29,9 +29,35 @@ class GithubRepository @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
 
 
-    fun getOrganizations() : Observable<RequestState> =
+    fun getOrganizations(): Observable<RequestState> =
         githubServices.getOrganizations()
             .flatMap<RequestState> { Observable.just(RequestState.Success(it)) }
+            .startWithItem(RequestState.Loading)
+            .onErrorReturn {
+                RequestState.Error(
+                    it.localizedMessage ?: context.getString(R.string.something_went_wrong)
+                )
+            }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+
+
+    fun getLicenseDetails(licenseUrl: String): Observable<RequestState> =
+        githubServices.getLicenseDetails(licenseUrl)
+            .map<RequestState> { RequestState.Success(it) }
+            .startWithItem(RequestState.Loading)
+            .onErrorReturn {
+                RequestState.Error(
+                    it.localizedMessage ?: context.getString(R.string.something_went_wrong)
+                )
+            }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+
+
+    fun getIssues(issuesUrl: String) : Observable<RequestState> =
+        githubServices.getIssues(issuesUrl)
+            .map<RequestState> { RequestState.Success(it) }
             .startWithItem(RequestState.Loading)
             .onErrorReturn {
                 RequestState.Error(
